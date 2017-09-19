@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'MonsterId'
+    bintrayRepo = 'monsterid'
+    bintrayName = 'MonsterID'
 
     publishedGroupId = 'org.zg.monsterid'
-    libraryName = 'MonsterId'
-    artifact = 'MonsterId'
+    libraryName = 'MonsterID'
+    artifact = 'MonsterID'
 
     libraryDescription = 'MonsterID on Android'
 
