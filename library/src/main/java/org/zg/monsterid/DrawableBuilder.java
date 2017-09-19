@@ -2,11 +2,6 @@ package org.zg.monsterid;
 
 import android.graphics.drawable.Drawable;
 
-/**
- * @Author deepankar
- * @date 17/9/17.
- */
-
 public interface DrawableBuilder<T extends Drawable> {
 
     T actionBarSize();

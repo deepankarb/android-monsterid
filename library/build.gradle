@@ -1,30 +1,63 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'MonsterId'
+
+    publishedGroupId = 'org.zg.monsterid'
+    libraryName = 'MonsterId'
+    artifact = 'MonsterId'
+
+    libraryDescription = 'MonsterID on Android'
+
+    siteUrl = 'https://github.com/deepankarb/android-monsterid'
+    gitUrl = 'https://github.com/deepankarb/android-monsterid.git'
+
+    libraryVersion = '0.0.1'
+
+    developerId = 'deepankarb'
+    developerName = 'Deepankar Bhardwaj'
+    developerEmail = 'deepankar.bhardwaj@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
-
 
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        versionName "0.0.1"
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    lintOptions {
+        abortOnError true
+        xmlReport false
+        fatal 'StopShip'
+    }
+}
+
+configurations {
+    javadocDeps
 }
 
 dependencies {
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:support-annotations:26.1.0'
+    javadocDeps 'com.android.support:support-annotations:26.1.0'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
+
+apply from: rootProject.file('gradle/install.gradle')
+apply from: rootProject.file('gradle/bintray.gradle')

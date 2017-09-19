@@ -13,11 +13,6 @@ import android.support.annotation.Nullable;
 
 import java.util.Random;
 
-/**
- * @Author deepankar
- * @date 17/9/17.
- */
-
 public class MonsterIdDrawable extends Drawable implements DrawableBuilder<MonsterIdDrawable> {
 
     private static final int ANDROID_ACTIONBAR_ICON_SIZE_DP = 24;
